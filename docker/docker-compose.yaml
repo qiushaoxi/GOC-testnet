@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  goc:
+    image: qiushaoxi/goc:10230fe
+    command: nodeos --data-dir /goc/data --config-dir /goc/config  --delete-all-blocks --genesis-json=/goc/config/genesis.json
+    hostname: enunoded
+    ports:
+      - 8888:8888
+      - 9876:9876
+    volumes:
+      - /Users/qiushaoxi/dev/goc/testnet/config:/goc/config
+      - /Users/qiushaoxi/dev/goc/testnet/data:/goc/data
